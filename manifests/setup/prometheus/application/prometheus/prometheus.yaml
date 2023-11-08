@@ -9,10 +9,10 @@ metadata:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prometheus
+  name: prometheus-server
   namespace: argocd
   labels:
-      name: prometheus
+      name: prometheus-server
 spec:
   project: default
   sources:
