@@ -43,7 +43,6 @@ spec:
           # Allow the ability for resource pruning to happen as a final, implicit wave of a sync operation
           - PruneLast=true
           - ServerSideApply=true
-          - Replace=true
       retry:
           limit: 5
           backoff:
