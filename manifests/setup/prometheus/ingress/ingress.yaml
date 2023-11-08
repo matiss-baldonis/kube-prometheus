@@ -5,13 +5,17 @@ metadata:
   namespace: monitoring
   annotations:
     kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   # Use the host you used in your kubernetes Ingress Configurations
-  - host: nginx.example.com
+  - host: prometheus.example.com
     http:
       paths:
       - backend:
-          serviceName: prometheus-service
-          servicePort: 8080
-        pathType: ImplementationSpecific
+          service:
+            name: prometheus-service
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
